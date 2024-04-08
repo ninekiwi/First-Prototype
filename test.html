@@ -138,13 +138,6 @@
                 <br>
                 <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
                 <br><br>
-                <h3>Any schedule delays occur?</h3>
-                <label for="delays">Yes</label>
-                <input type="radio" id="delays" name="delays" value="yes">
-                <label for="delays">No</label>
-                <input type="radio" id="delays" name="delays" value="no">
-                <br>
-                <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Did weather cause any delays?</h3>
                 <label for="weatherDelays">Yes</label>
@@ -257,16 +250,76 @@
                 <br>
                 <br>
             </div>
-            <!-- Add other sections similarly -->
-
-            <h3>Prepared by:</h3>
+            <h1 style="color: #FF5733;">Housekeeping</h1>
+            <div class="item">
+                <h3>1. Are all areas of the project being kept clean and free of debris?</h3>
+                <label for="cleanA">Yes</label>
+                <input type="radio" id="cleanA" name="cleanA" value="yes">
+                <label for="cleanA">No</label>
+                <input type="radio" id="cleanA" name="cleanA" value="no">
+                <br>
+                <h3>2. Are all corridors, stairs, and paths of egress free of debris?</h3>
+                <label for="debrisF">Yes</label>
+                <input type="radio" id="debrisF" name="debrisF" value="yes">
+                <label for="debrisF">No</label>
+                <input type="radio" id="debrisF" name="debrisF" value="no">
+                <br>
+                <h3>3. Are any areas not up to housekeeping standards being addressed by the team?</h3>
+                <label for="standards">Yes</label>
+                <input type="radio" id="standards" name="standards" value="yes">
+                <label for="standards">No</label>
+                <input type="radio" id="standards" name="standards" value="no">
+                <br>
+                <h3>4. Project has adequate number of Fire Extinguishers and they are spaced as required.</h3>
+                <label for="fExtinguishers">Yes</label>
+                <input type="radio" id="fExtinguishers" name="fExtinguishers" value="yes">
+                <label for="fExtinguishers">No</label>
+                <input type="radio" id="fExtinguishers" name="fExtinguishers" value="no">
+                <br>
+                <h3>5. Please indicate any safety issues specific to housekeeping noted during the inspection.</h3>
+                <textarea id="housekeepingDescription" name="housekeepingDescription" placeholder="Description"></textarea>
+                <br>
+                <br>
+            </div>
+            <h1 style="color: #FF5733;">Equipment On Site</h1>
+            <div class="item">
+                <h3>1. All workers using equipment on site have been trained to use that specific equipment.</h3>
+                <label for="trained">Yes</label>
+                <input type="radio" id="trained" name="trained" value="yes">
+                <label for="trained">No</label>
+                <input type="radio" id="trained" name="trained" value="no">
+                <br>
+                <h3>2. All workers using equipment on site are following manufacturer's and OSHA's requirements for safe use.</h3>
+                <label for="OSHA">Yes</label>
+                <input type="radio" id="OSHA" name="OSHA" value="yes">
+                <label for="OSHA">No</label>
+                <input type="radio" id="OSHA" name="OSHA" value="no">
+                <br>
+                <h3>3. All cords, plugs, and spider boxes are in good working condition</h3>
+                <label for="gcondition">Yes</label>
+                <input type="radio" id="gcondition" name="gcondition" value="yes">
+                <label for="gcondition">No</label>
+                <input type="radio" id="gcondition" name="gcondition" value="no">
+                <br>
+                <h3>4. Please indicate any safety issues specific to equipment noted during the inspection</h3>
+                <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
+                <br>
+                <br>
+            </div>
+            <h3 style="color: #FF5733;">Prepared by:</h3>
             <input type="text" name="preparedBy" required>
+            <br>
+            <h3 style="color: #FF5733;">Date:</h3>
+            <input type="date" name="inspectionDate" required>
+            <br>
+            <br>
 
             <!-- Buttons for Save as PDF, Send as PDF, Null Button -->
             <button type="button" onclick="saveAsPDF()">Save as PDF</button>
             <button type="button" onclick="sendAsPDF()">Send as PDF</button>
             <button type="button" onclick="nullFunction()">Null Button</button>
         </form>
+        <br>
         <br>
         <div class="copyright_section">
             <p class="copyright_text">Copyright 2024 All Right Reserved By -<a href="https://ninekiwi.com/"> NineKiwi.com</p>
