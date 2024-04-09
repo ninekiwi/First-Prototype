@@ -111,12 +111,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-        <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
+    <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
         <form id="inspectionForm">
             <br>
-            <h1 style="color: #FF5733;">Survey</h1>
             <div class="item">
+                <h1 style="color: #FF5733;">Survey</h1>
                 <h3>Any Accidents Today?</h3>
                 <label for="accidents">Yes</label>
                 <input type="radio" id="accidents" name="accidents" value="yes">
@@ -173,9 +172,9 @@
                 <br><br>
 
             </div>
-
-            <h1 style="color: #FF5733;">Exterior of Project</h1>
+            <div class="page-break"></div>
             <div class="item">
+                <h1 style="color: #FF5733;">Exterior of Project</h1>
                 <h3>1. Are all fences installed safely and supported properly?</h3>
                 <label for="fences">Yes</label>
                 <input type="radio" id="fences" name="fences" value="yes">
@@ -218,9 +217,10 @@
 
             <br>
             </div>
-
-            <h1 style="color: #FF5733;">Personal Protective Equipment</h1>
+            <div class="page-break"></div>
             <div class="item">
+                <h1 style="color: #FF5733;">Personal Protective Equipment</h1>
+
                 <h3>1. Are all workers wearing hardhats, safety glasses, vests, and work boots?</h3>
                 <label for="wearing">Yes</label>
                 <input type="radio" id="wearing" name="wearing" value="yes">
@@ -250,8 +250,9 @@
                 <br>
                 <br>
             </div>
-            <h1 style="color: #FF5733;">Housekeeping</h1>
+            <div class="page-break"></div>
             <div class="item">
+                <h1 style="color: #FF5733;">Housekeeping</h1>
                 <h3>1. Are all areas of the project being kept clean and free of debris?</h3>
                 <label for="cleanA">Yes</label>
                 <input type="radio" id="cleanA" name="cleanA" value="yes">
@@ -281,8 +282,9 @@
                 <br>
                 <br>
             </div>
-            <h1 style="color: #FF5733;">Equipment On Site</h1>
+            <div class="page-break"></div>
             <div class="item">
+                <h1 style="color: #FF5733;">Equipment On Site</h1>
                 <h3>1. All workers using equipment on site have been trained to use that specific equipment.</h3>
                 <label for="trained">Yes</label>
                 <input type="radio" id="trained" name="trained" value="yes">
@@ -306,11 +308,14 @@
                 <br>
                 <br>
             </div>
+            <div class="item">
+
             <h3 style="color: #FF5733;">Prepared by:</h3>
             <input type="text" name="preparedBy" required>
             <br>
             <h3 style="color: #FF5733;">Date:</h3>
             <input type="date" name="inspectionDate" required>
+            </div>
             <br>
             <br>
 
@@ -346,22 +351,35 @@
             }
         });
     </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
     <script>
-        // JavaScript functions for Save as PDF, Send as PDF, Null Button
- function saveAsPDF() {
-  // Add logic to save form as PDF
-  alert("Feature Coming Soon , soon->Form saved as PDF");
-}
+        function saveAsPDF() {
+        const element = document.getElementById('inspectionForm');
 
-function sendAsPDF() {
-  // Add logic to send form as PDF
-  alert("Feature Coming Soon ,soon->Form sent as PDF");
-}
+        // Get current date and time
+        const now = new Date();
+        const date = now.toISOString().slice(0,10); // Get date in YYYY-MM-DD format
+        const time = now.toLocaleTimeString().replace(/:/g, ''); // Get time without colons
+        const filename = `Construction_Inspection_and_Survey_Form_${date}_${time}.pdf`; // Construct filename
 
-function nullFunction() {
-  // Placeholder for null button functionality
-  alert("Feature Coming Soon");
-}
+        html2pdf()
+            .from(element)
+            .set({
+                margin: [20, 10], // Left and right margin of 20px, Top and bottom margin of 10px
+                pagebreak: { mode: 'avoid-all', avoid: '.page-break' } // Recognize page break elements
+            })
+            .save(filename);
+    }
+
+        function sendAsPDF() {
+            alert("Feature Coming Soon");
+        }
+
+        function nullFunction() {
+            alert("Feature Coming Soon");
+        }
     </script>
+   
 </body>
 </html>
