@@ -2,35 +2,35 @@
 <html>
 <head>
     <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>NineKiwi.com</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="images//favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="images//favicon-16x16.png">
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>NineKiwi.com</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets --> 
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <title>Construction Inspection and Survey Form</title>
     <style>
         body {
@@ -118,241 +118,71 @@
                 <h1 style="color: #FF5733;">Survey</h1>
                 <h3>Any Accidents Today?</h3>
                 <label for="accidents">Yes</label>
-                <input type="radio" id="accidents" name="accidents" value="yes">
+                <input type="radio" id="accidents_yes" name="accidents" value="yes">
                 <label for="accidents">No</label>
-                <input type="radio" id="accidents" name="accidents" value="no">
+                <input type="radio" id="accidents_no" name="accidents" value="no">
                 <label for="accidents">N/A</label>
-                <input type="radio" id="accidents" name="accidents" value="NA">
+                <input type="radio" id="accidents_na" name="accidents" value="NA">
                 <br>
                 <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Tenant Protection Inspection</h3>
                <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
                <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>
-                <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
+                <textarea id="tenantProtectionDescription" name="tenantProtectionDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Any schedule delays occur?</h3>
                 <label for="delays">Yes</label>
-                <input type="radio" id="delays" name="delays" value="yes">
+                <input type="radio" id="delays_yes" name="delays" value="yes">
                 <label for="delays">No</label>
-                <input type="radio" id="delays" name="delays" value="no">
+                <input type="radio" id="delays_no" name="delays" value="no">
                 <label for="delays">N/A</label>
-                <input type="radio" id="delays" name="delays" value="NA">
+                <input type="radio" id="delays_na" name="delays" value="NA">
                 <br>
                 <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
                 <br><br>
                 <br><br>
                 <h3>Did weather cause any delays?</h3>
                 <label for="weatherDelays">Yes</label>
-                <input type="radio" id="weatherDelays" name="weatherDelays" value="yes">
+                <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes">
                 <label for="weatherDelays">No</label>
-                <input type="radio" id="weatherDelays" name="weatherDelays" value="no">
+                <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no">
                 <label for="weatherDelays">N/A</label>
-                <input type="radio" id="weatherDelays" name="weatherDelays" value="NA">
+                <input type="radio" id="weatherDelays_na" name="weatherDelays" value="NA">
                 <br>
                 <textarea id="weatherDelaysDescription" name="weatherDelaysDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Any visitors on site?</h3>
                 <label for="visitor">Yes</label>
-                <input type="radio" id="visitor" name="visitor" value="yes">
+                <input type="radio" id="visitor_yes" name="visitor" value="yes">
                 <label for="visitor">No</label>
-                <input type="radio" id="visitors" name="visitor" value="no">
+                <input type="radio" id="visitor_no" name="visitor" value="no">
                 <label for="visitor">N/A</label>
-                <input type="radio" id="visitors" name="visitor" value="NA">
+                <input type="radio" id="visitor_na" name="visitor" value="NA">
                 <br>
                 <textarea id="visitorsDescription" name="visitorsDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Any area's that can't be worked on?</h3>
                 <label for="area">Yes</label>
-                <input type="radio" id="area" name="area" value="yes">
+                <input type="radio" id="area_yes" name="area" value="yes">
                 <label for="area">No</label>
-                <input type="radio" id="area" name="area" value="no">
+                <input type="radio" id="area_no" name="area" value="no">
                 <label for="area">N/A</label>
-                <input type="radio" id="area" name="area" value="NA">
+                <input type="radio" id="area_na" name="area" value="NA">
                 <br>
                 <textarea id="areaDescription" name="areaDescription" placeholder="Description"></textarea>
                 <br><br>
                 <h3>Any equipment rented on site?</h3>
                 <label for="equipment">Yes</label>
-                <input type="radio" id="equipment" name="equipment" value="yes">
+                <input type="radio" id="equipment_yes" name="equipment" value="yes">
                 <label for="equipment">No</label>
-                <input type="radio" id="equipment" name="equipment" value="no">
+                <input type="radio" id="equipment_no" name="equipment" value="no">
                 <label for="equipment">N/A</label>
-                <input type="radio" id="equipment" name="equipment" value="NA">
+                <input type="radio" id="equipment_na" name="equipment" value="NA">
                 <br>
                 <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
                 <br><br>
 
-            </div>
-            <div class="page-break"></div>
-            <div class="item">
-                <h1 style="color: #FF5733;">Exterior of Project</h1>
-                <h3>1. Are all fences installed safely and supported properly?</h3>
-                <label for="fences">Yes</label>
-                <input type="radio" id="fences" name="fences" value="yes">
-                <label for="fences">No</label>
-                <input type="radio" id="fences" name="fences" value="no">
-                <label for="fences">N/A</label>
-                <input type="radio" id="fences" name="fences" value="NA">
-                <br>
-                <h3>2. Is all project signage properly mounted and displayed for the public?</h3>
-                <label for="signage">Yes</label>
-                <input type="radio" id="signage" name="signage" value="yes">
-                <label for="signage">No</label>
-                <input type="radio" id="signage" name="signage" value="no">
-                <label for="signage">N/A</label>
-                <input type="radio" id="signage" name="signage" value="NA">
-                <br>
-                <h3>3. Loading dock/material receiving area is clear of any vehicles or materials?</h3>
-                <label for="rarea">Yes</label>
-                <input type="radio" id="rarea" name="rarea" value="yes">
-                <label for="rarea">No</label>
-                <input type="radio" id="rarea" name="rarea" value="no">
-                <label for="rarea">N/A</label>
-                <input type="radio" id="rarea" name="rarea" value="NA">
-                <br>
-                <h3>4. All exterior equipment has proper flaggers, back-up signals, and is following speed limits.</h3>
-                <label for="eequipment">Yes</label>
-                <input type="radio" id="eequipment" name="eequipment" value="yes">
-                <label for="eequipment">No</label>
-                <input type="radio" id="eequipment" name="eequipment" value="no">
-                <label for="eequipment">N/A</label>
-                <input type="radio" id="eequipment" name="eequipment" value="NA">
-                <br>
-                <h3>5. All trenching is being barricaded and workers are using shoring as required.</h3>
-                <label for="trenching">Yes</label>
-                <input type="radio" id="trenching" name="trenching" value="yes">
-                <label for="trenching">No</label>
-                <input type="radio" id="trenching" name="trenching" value="no">
-                <label for="trenching">N/A</label>
-                <input type="radio" id="trenching" name="trenching" value="NA">
-                <br>
-                <h3>6. All crane activities are working safely to ensure protection of workers and the public.</h3>
-                <label for="crane">Yes</label>
-                <input type="radio" id="crane" name="crane" value="yes">
-                <label for="crane">No</label>
-                <input type="radio" id="crane" name="crane" value="no">
-                <label for="crane">N/A</label>
-                <input type="radio" id="crane" name="crane" value="NA">
-                <br>
-                <h3>7. Please indicate any safety issues specific to exterior of the project noted during the inspection.</h3>
-                <textarea id="eDescription" name="eDescription" placeholder="Description"></textarea>
-                <br>
-
-            <br>
-            </div>
-            <div class="page-break"></div>
-            <div class="item">
-                <h1 style="color: #FF5733;">Personal Protective Equipment</h1>
-
-                <h3>1. Are all workers wearing hardhats, safety glasses, vests, and work boots?</h3>
-                <label for="wearing">Yes</label>
-                <input type="radio" id="wearing" name="wearing" value="yes">
-                <label for="wearing">No</label>
-                <input type="radio" id="wearing" name="wearing" value="no">
-                <label for="wearing">N/A</label>
-                <input type="radio" id="wearing" name="wearing" value="NA">
-                <br>
-                <h3>2. Any hazardous work occurring on site is utilizing all required PPE</h3>
-                <label for="uPPE">Yes</label>
-                <input type="radio" id="uPPE" name="uPPE" value="yes">
-                <label for="uPPE">No</label>
-                <input type="radio" id="uPPE" name="uPPE" value="no">
-                <label for="uPPE">N/A</label>
-                <input type="radio" id="uPPE" name="uPPE" value="NA">
-                <br>
-                <h3>3. All fall protection is being worn for work occurring above 6 feet.</h3>
-                <label for="fprotection">Yes</label>
-                <input type="radio" id="fprotection" name="fprotection" value="yes">
-                <label for="fprotection">No</label>
-                <input type="radio" id="fprotection" name="fprotection" value="no">
-                <label for="fprotection">N/A</label>
-                <input type="radio" id="fprotection" name="fprotection" value="NA">
-                <br>
-                <h3>4. All visitors on site are wearing appropriate PPE.</h3>
-                <label for="vPPE">Yes</label>
-                <input type="radio" id="vPPE" name="vPPE" value="yes">
-                <label for="vPPE">No</label>
-                <input type="radio" id="vPPE" name="vPPE" value="no">
-                <label for="vPPE">N/A</label>
-                <input type="radio" id="vPPE" name="vPPE" value="NA">
-                <br>
-                <h3>5. Please indicate any safety issues specific to PPE noted during the inspection.</h3>
-                <textarea id="PPEDescription" name="PPEDescription" placeholder="Description"></textarea>
-                <br>
-                <br>
-            </div>
-            <div class="page-break"></div>
-            <div class="item">
-                <h1 style="color: #FF5733;">Housekeeping</h1>
-                <h3>1. Are all areas of the project being kept clean and free of debris?</h3>
-                <label for="cleanA">Yes</label>
-                <input type="radio" id="cleanA" name="cleanA" value="yes">
-                <label for="cleanA">No</label>
-                <input type="radio" id="cleanA" name="cleanA" value="no">
-                <label for="cleanA">N/A</label>
-                <input type="radio" id="cleanA" name="cleanA" value="NA">
-                <br>
-                <h3>2. Are all corridors, stairs, and paths of egress free of debris?</h3>
-                <label for="debrisF">Yes</label>
-                <input type="radio" id="debrisF" name="debrisF" value="yes">
-                <label for="debrisF">No</label>
-                <input type="radio" id="debrisF" name="debrisF" value="no">
-                <label for="debrisF">N/A</label>
-                <input type="radio" id="debrisF" name="debrisF" value="NA">
-                <br>
-                <h3>3. Are any areas not up to housekeeping standards being addressed by the team?</h3>
-                <label for="standards">Yes</label>
-                <input type="radio" id="standards" name="standards" value="yes">
-                <label for="standards">No</label>
-                <input type="radio" id="standards" name="standards" value="no">
-                <label for="standards">N/A</label>
-                <input type="radio" id="standards" name="standards" value="NA">
-                <br>
-                <h3>4. Project has adequate number of Fire Extinguishers and they are spaced as required.</h3>
-                <label for="fExtinguishers">Yes</label>
-                <input type="radio" id="fExtinguishers" name="fExtinguishers" value="yes">
-                <label for="fExtinguishers">No</label>
-                <input type="radio" id="fExtinguishers" name="fExtinguishers" value="no">
-                <label for="fExtinguishers">N/A</label>
-                <input type="radio" id="fExtinguishers" name="fExtinguishers" value="NA">
-                <br>
-                <h3>5. Please indicate any safety issues specific to housekeeping noted during the inspection.</h3>
-                <textarea id="housekeepingDescription" name="housekeepingDescription" placeholder="Description"></textarea>
-                <br>
-                <br>
-            </div>
-            <div class="page-break"></div>
-            <div class="item">
-                <h1 style="color: #FF5733;">Equipment On Site</h1>
-                <h3>1. All workers using equipment on site have been trained to use that specific equipment.</h3>
-                <label for="trained">Yes</label>
-                <input type="radio" id="trained" name="trained" value="yes">
-                <label for="trained">No</label>
-                <input type="radio" id="trained" name="trained" value="no">
-                <label for="trained">N/A</label>
-                <input type="radio" id="trained" name="trained" value="NA">
-                <br>
-                <h3>2. All workers using equipment on site are following manufacturer's and OSHA's requirements for safe use.</h3>
-                <label for="OSHA">Yes</label>
-                <input type="radio" id="OSHA" name="OSHA" value="yes">
-                <label for="OSHA">No</label>
-                <input type="radio" id="OSHA" name="OSHA" value="no">
-                <label for="OSHA">N/A</label>
-                <input type="radio" id="OSHA" name="OSHA" value="NA">
-                <br>
-                <h3>3. All cords, plugs, and spider boxes are in good working condition</h3>
-                <label for="gcondition">Yes</label>
-                <input type="radio" id="gcondition" name="gcondition" value="yes">
-                <label for="gcondition">No</label>
-                <input type="radio" id="gcondition" name="gcondition" value="no">
-                <label for="gcondition">N/A</label>
-                <input type="radio" id="gcondition" name="gcondition" value="NA">
-                <br>
-                <h3>4. Please indicate any safety issues specific to equipment noted during the inspection</h3>
-                <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
-                <br>
-                <br>
             </div>
             <div class="item">
 
@@ -379,7 +209,7 @@
     <script>
         const fileInput = document.getElementById('tenantProtection');
         const imagePreviews = document.getElementById('imagePreviews');
-
+    
         fileInput.addEventListener('change', function() {
             imagePreviews.innerHTML = ''; // Clear previous previews
             const files = fileInput.files;
@@ -396,28 +226,41 @@
                 reader.readAsDataURL(file);
             }
         });
+    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
-        async function saveAsPDF() {
-            const formData = new FormData(document.getElementById('inspectionForm'));
-            const response = await fetch('/generate-pdf', {
-                method: 'POST',
-                body: formData
-            });
+    <script>
+        // JavaScript functions for Save as PDF, Send as PDF, Null Button
+ function saveAsPDF() {
+  // Add logic to save form as PDF
+  alert("Feature Coming Soon , soon->Form saved as PDF");
+}
+        function saveAsPDF() {
+        const element = document.getElementById('inspectionForm');
 
-            if (response.ok) {
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'Construction_Inspection_and_Survey_Form.pdf';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            } else {
-                console.error('Failed to generate PDF');
-            }
-        }
+        // Get current date and time
+        const now = new Date();
+        const date = now.toISOString().slice(0,10); // Get date in YYYY-MM-DD format
+        const time = now.toLocaleTimeString().replace(/:/g, ''); // Get time without colons
+        const filename = `Construction_Inspection_and_Survey_Form_${date}_${time}.pdf`; // Construct filename
 
+function sendAsPDF() {
+  // Add logic to send form as PDF
+  alert("Feature Coming Soon ,soon->Form sent as PDF");
+}
+        html2pdf()
+            .from(element)
+            .set({
+                margin: [20, 10], // Left and right margin of 20px, Top and bottom margin of 10px
+                pagebreak: { mode: 'avoid-all', avoid: '.page-break' } // Recognize page break elements
+            })
+            .save(filename);
+    }
+
+function nullFunction() {
+  // Placeholder for null button functionality
+  alert("Feature Coming Soon");
+}
         function sendAsPDF() {
             alert("Feature Coming Soon");
         }
@@ -426,5 +269,6 @@
             alert("Feature Coming Soon");
         }
     </script>
+
 </body>
 </html>

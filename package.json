@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "express": "^4.19.2",
+    "pdfkit": "^0.15.0",
     "puppeteer": "^22.6.4"
-  }
+  },
+  "name": "first-prototype",
+  "description": "This repository contains the first prototype for NineKiwi.com. It serves as an initial version of the site, showcasing its basic functionality and design.",
+  "version": "1.0.0",
+  "main": "generatePDF.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
