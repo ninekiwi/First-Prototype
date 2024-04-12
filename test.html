@@ -112,94 +112,254 @@
 <body>
     <div class="container">
     <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
-        <form id="inspectionForm">
+    <form id="inspectionForm">
+        <br>
+        <h1 style="color: #FF5733;">Survey</h1>
+        <div class="item">
+            <h3>Any Accidents Today?</h3>
+            <label for="accidents">Yes</label>
+            <input type="radio" id="accidents_yes" name="accidents" value="yes">
+            <label for="accidents">No</label>
+            <input type="radio" id="accidents_no" name="accidents" value="no">
+            <label for="accidents">N/A</label>
+            <input type="radio" id="accidents_na" name="accidents" value="NA">
             <br>
-            <div class="item">
-                <h1 style="color: #FF5733;">Survey</h1>
-                <h3>Any Accidents Today?</h3>
-                <label for="accidents">Yes</label>
-                <input type="radio" id="accidents_yes" name="accidents" value="yes">
-                <label for="accidents">No</label>
-                <input type="radio" id="accidents_no" name="accidents" value="no">
-                <label for="accidents">N/A</label>
-                <input type="radio" id="accidents_na" name="accidents" value="NA">
-                <br>
-                <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
-                <br><br>
-                <h3>Tenant Protection Inspection</h3>
-               <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
-               <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>
-                <textarea id="tenantProtectionDescription" name="tenantProtectionDescription" placeholder="Description"></textarea>
-                <br><br>
-                <h3>Any schedule delays occur?</h3>
-                <label for="delays">Yes</label>
-                <input type="radio" id="delays_yes" name="delays" value="yes">
-                <label for="delays">No</label>
-                <input type="radio" id="delays_no" name="delays" value="no">
-                <label for="delays">N/A</label>
-                <input type="radio" id="delays_na" name="delays" value="NA">
-                <br>
-                <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
-                <br><br>
-                <br><br>
-                <h3>Did weather cause any delays?</h3>
-                <label for="weatherDelays">Yes</label>
-                <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes">
-                <label for="weatherDelays">No</label>
-                <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no">
-                <label for="weatherDelays">N/A</label>
-                <input type="radio" id="weatherDelays_na" name="weatherDelays" value="NA">
-                <br>
-                <textarea id="weatherDelaysDescription" name="weatherDelaysDescription" placeholder="Description"></textarea>
-                <br><br>
-                <h3>Any visitors on site?</h3>
-                <label for="visitor">Yes</label>
-                <input type="radio" id="visitor_yes" name="visitor" value="yes">
-                <label for="visitor">No</label>
-                <input type="radio" id="visitor_no" name="visitor" value="no">
-                <label for="visitor">N/A</label>
-                <input type="radio" id="visitor_na" name="visitor" value="NA">
-                <br>
-                <textarea id="visitorsDescription" name="visitorsDescription" placeholder="Description"></textarea>
-                <br><br>
-                <h3>Any area's that can't be worked on?</h3>
-                <label for="area">Yes</label>
-                <input type="radio" id="area_yes" name="area" value="yes">
-                <label for="area">No</label>
-                <input type="radio" id="area_no" name="area" value="no">
-                <label for="area">N/A</label>
-                <input type="radio" id="area_na" name="area" value="NA">
-                <br>
-                <textarea id="areaDescription" name="areaDescription" placeholder="Description"></textarea>
-                <br><br>
-                <h3>Any equipment rented on site?</h3>
-                <label for="equipment">Yes</label>
-                <input type="radio" id="equipment_yes" name="equipment" value="yes">
-                <label for="equipment">No</label>
-                <input type="radio" id="equipment_no" name="equipment" value="no">
-                <label for="equipment">N/A</label>
-                <input type="radio" id="equipment_na" name="equipment" value="NA">
-                <br>
-                <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
-                <br><br>
-
-            </div>
-            <div class="item">
-
-            <h3 style="color: #FF5733;">Prepared by:</h3>
-            <input type="text" name="preparedBy" required>
+            <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
+            <br><br>
+            <h3>Tenant Protection Inspection</h3>
+           <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
+           <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>
+            <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
+            <br><br>
+            <h3>Any schedule delays occur?</h3>
+            <label for="delays">Yes</label>
+            <input type="radio" id="delays_yes" name="delays" value="yes">
+            <label for="delays">No</label>
+            <input type="radio" id="delays_no" name="delays" value="no">
+            <label for="delays">N/A</label>
+            <input type="radio" id="delays_na" name="delays" value="NA">
             <br>
-            <h3 style="color: #FF5733;">Date:</h3>
-            <input type="date" name="inspectionDate" required>
-            </div>
+            <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
+            <br><br>
+            <br><br>
+            <h3>Did weather cause any delays?</h3>
+            <label for="weatherDelays">Yes</label>
+            <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes">
+            <label for="weatherDelays">No</label>
+            <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no">
+            <label for="weatherDelays">N/A</label>
+            <input type="radio" id="weatherDelays_na" name="weatherDelays" value="no">
+            <br>
+            <textarea id="weatherDelaysDescription" name="weatherDelaysDescription" placeholder="Description"></textarea>
+            <br><br>
+            <h3>Any visitors on site?</h3>
+            <label for="visitor">Yes</label>
+            <input type="radio" id="visitor_yes" name="visitor" value="yes">
+            <label for="visitor">No</label>
+            <input type="radio" id="visitors_no" name="visitor" value="no">
+            <label for="visitor">N/A</label>
+            <input type="radio" id="visitor_na" name="visitor" value="NA">
+            <br>
+            <textarea id="visitorsDescription" name="visitorsDescription" placeholder="Description"></textarea>
+            <br><br>
+            <h3>Any area's that can't be worked on?</h3>
+            <label for="area">Yes</label>
+            <input type="radio" id="area_yes" name="area" value="yes">
+            <label for="area">No</label>
+            <input type="radio" id="area_no" name="area" value="no">
+            <label for="area">N/A</label>
+            <input type="radio" id="area_na" name="area" value="NA">
+            <br>
+            <textarea id="areaDescription" name="areaDescription" placeholder="Description"></textarea>
+            <br><br>
+            <h3>Any equipment rented on site?</h3>
+            <label for="equipment">Yes</label>
+            <input type="radio" id="equipment_yes" name="equipment" value="yes">
+            <label for="equipment">No</label>
+            <input type="radio" id="equipment_no" name="equipment" value="no">
+            <label for="equipment">N/A</label>
+            <input type="radio" id="equipment_na" name="equipment" value="NA">
+            <br>
+            <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
+            <br><br>
+        </div>
+        <h1 style="color: #FF5733;">Exterior of Project</h1>
+        <div class="item">
+            <h3>1. Are all fences installed safely and supported properly?</h3>
+            <label for="fences">Yes</label>
+            <input type="radio" id="fences_yes" name="fences" value="yes">
+            <label for="fences">No</label>
+            <input type="radio" id="fences_no" name="fences" value="no">
+            <label for="fences">N/A</label>
+            <input type="radio" id="fences_na" name="fences" value="NA">
+            <br>
+            <h3>2. Is all project signage properly mounted and displayed for the public?</h3>
+            <label for="signage">Yes</label>
+            <input type="radio" id="signage_yes" name="signage" value="yes">
+            <label for="signage">No</label>
+            <input type="radio" id="signage_no" name="signage" value="no">
+            <label for="signage">N/A</label>
+            <input type="radio" id="signage_na" name="signage" value="NA">
+            <br>
+            <h3>3. Loading dock/material receiving area is clear of any vehicles or materials?</h3>
+            <label for="rarea">Yes</label>
+            <input type="radio" id="rarea_yes" name="rarea" value="yes">
+            <label for="rarea">No</label>
+            <input type="radio" id="rarea_no" name="rarea" value="no">
+            <label for="rarea">N/A</label>
+            <input type="radio" id="rarea_na" name="rarea" value="NA">
+            <br>
+            <h3>4. All exterior equipment has proper flaggers, back-up signals, and is following speed limits.</h3>
+            <label for="eequipment">Yes</label>
+            <input type="radio" id="eequipment_yes" name="eequipment" value="yes">
+            <label for="eequipment">No</label>
+            <input type="radio" id="eequipment_no" name="eequipment" value="no">
+            <label for="eequipment">N/A</label>
+            <input type="radio" id="eequipment_na" name="eequipment" value="NA">
+            <br>
+            <h3>5. All trenching is being barricaded and workers are using shoring as required.</h3>
+            <label for="trenching">Yes</label>
+            <input type="radio" id="trenching_yes" name="trenching" value="yes">
+            <label for="trenching">No</label>
+            <input type="radio" id="trenching_no" name="trenching" value="no">
+            <label for="trenching">N/A</label>
+            <input type="radio" id="trenching_na" name="trenching" value="NA">
+            <br>
+            <h3>6. All crane activities are working safely to ensure protection of workers and the public.</h3>
+            <label for="crane">Yes</label>
+            <input type="radio" id="crane_yes" name="crane" value="yes">
+            <label for="crane">No</label>
+            <input type="radio" id="crane_no" name="crane" value="no">
+            <label for="crane">N/A</label>
+            <input type="radio" id="crane_na" name="crane" value="NA">
+            <br>
+            <h3>7. Please indicate any safety issues specific to exterior of the project noted during the inspection.</h3>
+            <textarea id="eDescription" name="eDescription" placeholder="Description"></textarea>
+            <br>
+        <br>
+        </div>
+        <h1 style="color: #FF5733;">Personal Protective Equipment</h1>
+        <div class="item">
+            <h3>1. Are all workers wearing hardhats, safety glasses, vests, and work boots?</h3>
+            <label for="wearing">Yes</label>
+            <input type="radio" id="wearing_yes" name="wearing" value="yes">
+            <label for="wearing">No</label>
+            <input type="radio" id="wearing_no" name="wearing" value="no">
+            <label for="wearing">N/A</label>
+            <input type="radio" id="wearing_na" name="wearing" value="NA">
+            <br>
+            <h3>2. Any hazardous work occurring on site is utilizing all required PPE</h3>
+            <label for="uPPE">Yes</label>
+            <input type="radio" id="uPPE_yes" name="uPPE" value="yes">
+            <label for="uPPE">No</label>
+            <input type="radio" id="uPPE_no" name="uPPE" value="no">
+            <label for="uPPE">N/A</label>
+            <input type="radio" id="uPPE_na" name="uPPE" value="NA">                                                            
+            <br>
+            <h3>3. All fall protection is being worn for work occurring above 6 feet.</h3>
+            <label for="fprotection">Yes</label>
+            <input type="radio" id="fprotection_yes" name="fprotection" value="yes">
+            <label for="fprotection">No</label>
+            <input type="radio" id="fprotection_no" name="fprotection" value="no">
+            <label for="fprotection">N/A</label>
+            <input type="radio" id="fprotection_na" name="fprotection" value="NA">
+            <br>
+            <h3>4. All visitors on site are wearing appropriate PPE.</h3>
+            <label for="vPPE">Yes</label>
+            <input type="radio" id="vPPE_yes" name="vPPE" value="yes">
+            <label for="vPPE">No</label>
+            <input type="radio" id="vPPE_no" name="vPPE" value="no">
+            <label for="vPPE">N/A</label>
+            <input type="radio" id="vPPE_na" name="vPPE" value="NA">
+            <br>
+            <h3>5. Please indicate any safety issues specific to PPE noted during the inspection.</h3>
+            <textarea id="PPEDescription" name="PPEDescription" placeholder="Description"></textarea>
             <br>
             <br>
-
-            <!-- Buttons for Save as PDF, Send as PDF, Null Button -->
-            <button type="button" onclick="saveAsPDF()">Save as PDF</button>
-            <button type="button" onclick="sendAsPDF()">Send as PDF</button>
-            <button type="button" onclick="nullFunction()">Feature Coming Soon</button>
-        </form>
+        </div>
+        <h1 style="color: #FF5733;">Housekeeping</h1>
+        <div class="item">
+            <h3>1. Are all areas of the project being kept clean and free of debris?</h3>
+            <label for="cleanA">Yes</label>
+            <input type="radio" id="cleanA_yes" name="cleanA" value="yes">
+            <label for="cleanA">No</label>
+            <input type="radio" id="cleanA_no" name="cleanA" value="no">
+            <label for="cleanA">N/A</label>
+            <input type="radio" id="cleanA_na" name="cleanA" value="NA">
+            <br>
+            <h3>2. Are all corridors, stairs, and paths of egress free of debris?</h3>
+            <label for="debrisF">Yes</label>
+            <input type="radio" id="debrisF_yes" name="debrisF" value="yes">
+            <label for="debrisF">No</label>
+            <input type="radio" id="debrisF_no" name="debrisF" value="no">
+            <label for="debrisF">N/A</label>
+            <input type="radio" id="debrisF_na" name="debrisF" value="NA">
+            <br>
+            <h3>3. Are any areas not up to housekeeping standards being addressed by the team?</h3>
+            <label for="standards">Yes</label>
+            <input type="radio" id="standards_yes" name="standards" value="yes">
+            <label for="standards">No</label>
+            <input type="radio" id="standards_no" name="standards" value="no">
+            <label for="standards">N/A</label>
+            <input type="radio" id="standards_na" name="standards" value="NA">
+            <br>
+            <h3>4. Project has adequate number of Fire Extinguishers and they are spaced as required.</h3>
+            <label for="fExtinguishers">Yes</label>
+            <input type="radio" id="fExtinguishers_yes" name="fExtinguishers" value="yes">
+            <label for="fExtinguishers">No</label>
+            <input type="radio" id="fExtinguishers_no" name="fExtinguishers" value="no">
+            <label for="fExtinguishers">N/A</label>
+            <input type="radio" id="fExtinguishers_na" name="fExtinguishers" value="NA">
+            <br>
+            <h3>5. Please indicate any safety issues specific to housekeeping noted during the inspection.</h3>
+            <textarea id="housekeepingDescription" name="housekeepingDescription" placeholder="Description"></textarea>
+            <br>
+            <br>
+        </div>
+        <h1 style="color: #FF5733;">Equipment On Site</h1>
+        <div class="item">
+            <h3>1. All workers using equipment on site have been trained to use that specific equipment.</h3>
+            <label for="trained">Yes</label>
+            <input type="radio" id="trained_yes" name="trained" value="yes">
+            <label for="trained">No</label>
+            <input type="radio" id="trained_no" name="trained" value="no">
+            <label for="trained">N/A</label>
+            <input type="radio" id="trained_na" name="trained" value="NA">
+            <br>
+            <h3>2. All workers using equipment on site are following manufacturer's and OSHA's requirements for safe use.</h3>
+            <label for="OSHA">Yes</label>
+            <input type="radio" id="OSHA_yes" name="OSHA" value="yes">
+            <label for="OSHA">No</label>
+            <input type="radio" id="OSHA_no" name="OSHA" value="no">
+            <label for="OSHA">N/A</label>
+            <input type="radio" id="OSHA_na" name="OSHA" value="NA">
+            <br>
+            <h3>3. All cords, plugs, and spider boxes are in good working condition</h3>
+            <label for="gcondition">Yes</label>
+            <input type="radio" id="gcondition_yes" name="gcondition" value="yes">
+            <label for="gcondition">No</label>
+            <input type="radio" id="gcondition_no" name="gcondition" value="no">
+            <label for="gcondition">N/A</label>
+            <input type="radio" id="gcondition_na" name="gcondition" value="NA">
+            <br>
+            <h3>4. Please indicate any safety issues specific to equipment noted during the inspection</h3>
+            <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
+            <br>
+            <br>
+        </div>
+        <h3 style="color: #FF5733;">Prepared by:</h3>
+        <input type="text" name="preparedBy" required>
+        <br>
+        <h3 style="color: #FF5733;">Date:</h3>
+        <input type="date" name="inspectionDate" required>
+        <br>
+        <br>
+        <!-- Buttons for Save as PDF, Send as PDF, Null Button -->
+        <button type="button" onclick="saveAsPDF()">Save as PDF</button>
+        <button type="button" onclick="sendAsPDF()">Send as PDF</button>
+        <button type="button" onclick="nullFunction()">Null Button</button>
+        <button type="button" onclick="nullFunction()">Feature Coming Soon</button>
+    </form>
         <br>
         <br>
         <div class="copyright_section">
