@@ -109,9 +109,14 @@
         }
     </style>
 </head>
-<body>
+<body id="body">
     <div class="container">
-    <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
+        <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
+        <!-- Beautiful div with text -->
+        <div style="background-color: #f0f0f0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 20px; margin-top: 20px;">
+            <h3 style="text-align: center; color: #FF5733;">CNA BUILDERS AND CONSULTANT CORPORATION</h3>
+        </div>
+    <div class="container">
     <form id="inspectionForm">
         <br>
         <h1 style="color: #FF5733;">Survey</h1>
@@ -127,8 +132,9 @@
             <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
             <br><br>
             <h3>Tenant Protection Inspection</h3>
-           <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
-           <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>
+            <label for="tenantProtection" style="display: block; margin-bottom: 10px;">Choose Images:</label>
+            <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
+            <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
             <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
             <br><br>
             <h3>Any schedule delays occur?</h3>
@@ -396,7 +402,7 @@
   alert("Feature Coming Soon , soon->Form saved as PDF");
 }
         function saveAsPDF() {
-        const element = document.getElementById('inspectionForm');
+        const element = document.getElementById('body');
 
         // Get current date and time
         const now = new Date();
