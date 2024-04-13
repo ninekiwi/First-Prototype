@@ -122,18 +122,24 @@
                 <h2 style="color: #ffffff; background-color: #00065f; padding-top: 9px;">Construction Inspection and Survey Form</h2>
                 <br>
                 <!-- <h4 style="text-align: center; color: #04ff00;">Owner Inspector Choudhry M. Yusaf</h4> -->
-                <h2 style="text-align:right; color: #04ff00;">CNA BUILDERS AND CONSULTANT CORPORATION</h2>
-                <h4 style="text-align:right; color: #04ff00;">
+                <h4 style="text-align:right; color: #04ff00;">CNA BUILDERS AND CONSULTANT CORPORATION</h4>
+                <h5 style="text-align:right; color: #04ff00;">
                     1 CARRIAGE ROAD, ROSLYN, NY 11576
-                    TEL. NO. (718) 781-4484</h4>
+                    TEL. NO. (718) 781-4484</h5>
             </div>
         <div class="container">
             <p id="dateTime" style="color: #00065f; font-weight: bold;"></p>
         </div>
         <br>
+        <div id="weatherForecast"></div>
+<br>
         <div class="item">
+            <div >
+                <h3 style="color: #00065f;">Prepared by:</h3>
+                <input type="text" name="preparedBy" required>
+                <br>
+                <br>
             <h3 style="color: #03a900;">Tenant Protection Inspection</h3>
-            <label for="tenantProtection" style="display: block; margin-bottom: 10px;">Choose Images:</label>
             <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
             <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
             <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
@@ -202,6 +208,8 @@
             <br>
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br><br>
+        </div>
+
         </div>
         <div class="item">
             <h1 style="color: #03a900;">Exterior of Project</h1>
@@ -370,13 +378,7 @@
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br>
             <br>
-       <div id="DPB">
-        <h3 style="color: #00065f;">Prepared by:</h3>
-        <input type="text" name="preparedBy" required>
-        <br>
-        <h3 style="color: #00065f;">Date:</h3>
-        <input type="date" name="inspectionDate" required>
-        <br>
+      
         <br>
         <button type="button" onclick="saveAsPDF()">Save as PDF</button>
     <br>
@@ -444,8 +446,38 @@
         });
     </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
-    <script>
+        <script>
+            // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+            const apiKey = '9f3be61bc2884dec944123822241304';
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+        
+            // Function to render weather details
+            function renderWeatherDetails(weatherData) {
+                const weatherForecastElement = document.getElementById('weatherForecast');
+                // Create elements to display weather details
+                const temperatureElement = document.createElement('p');
+                temperatureElement.textContent = `Temperature: ${weatherData.main.temp} °C`;
+                const windSpeedElement = document.createElement('p');
+                windSpeedElement.textContent = `Wind Speed: ${weatherData.wind.speed} m/s`;
+                // Clear previous content
+                weatherForecastElement.innerHTML = '';
+                // Append weather details to weatherForecastElement
+                weatherForecastElement.appendChild(temperatureElement);
+                weatherForecastElement.appendChild(windSpeedElement);
+            }
+        
+            // Fetch weather data from OpenWeatherMap API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // Log the response to see if we are getting data
+                    renderWeatherDetails(data); // Render weather details
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                });
+        </script>
+<script>        
         // JavaScript functions for Save as PDF, Send as PDF, Null Button
  function saveAsPDF() {
   // Add logic to save form as PDF
@@ -463,7 +495,7 @@
             .from(element)
             .set({
                 margin: [9,9],
-                pagebreak: { after: '.item',avoid: '.DPB' }, 
+                pagebreak: { after: '.item' }, 
                 image: { type: 'jpeg', quality: 0.99 }, // Use JPEG format for images with high quality
                 html2canvas: { scale: 2 }, // Scale up the content for better quality
                 jsPDF: { unit: 'px', format: 'a1', orientation: 'portrait' } 
