@@ -121,17 +121,23 @@
             <div style="background-color: #00065f; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 9px; margin-top: 9px;">
                 <h2 style="color: #ffffff; background-color: #00065f; padding-top: 9px;">Construction Inspection and Survey Form</h2>
                 <br>
-                <h4 style="text-align: center; color: #04ff00;">Owner Inspector Choudhry M. Yusaf</h4>
-                <h2 style="text-align:center; color: #04ff00;">CNA BUILDERS AND CONSULTANT CORPORATION</h2>
-                <h3 style="text-align: center; color: #04ff00;">
+                <!-- <h4 style="text-align: center; color: #04ff00;">Owner Inspector Choudhry M. Yusaf</h4> -->
+                <h2 style="text-align:right; color: #04ff00;">CNA BUILDERS AND CONSULTANT CORPORATION</h2>
+                <h4 style="text-align:right; color: #04ff00;">
                     1 CARRIAGE ROAD, ROSLYN, NY 11576
-                    TEL. NO. (718) 781-4484</h3>
+                    TEL. NO. (718) 781-4484</h4>
             </div>
         <div class="container">
             <p id="dateTime" style="color: #00065f; font-weight: bold;"></p>
         </div>
         <br>
         <div class="item">
+            <h3 style="color: #03a900;">Tenant Protection Inspection</h3>
+            <label for="tenantProtection" style="display: block; margin-bottom: 10px;">Choose Images:</label>
+            <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
+            <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
+            <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
+            <br><br>
            
             <br>
             <h1 style="color: #03a900;">Survey</h1>
@@ -145,12 +151,6 @@
             <input type="radio" id="accidents_na" name="accidents" value="NA" oninput="toggleDescription('accidentsDescription', this)">
             <br>
             <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
-            <br><br>
-            <h3>Tenant Protection Inspection</h3>
-            <label for="tenantProtection" style="display: block; margin-bottom: 10px;">Choose Images:</label>
-            <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
-            <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
-            <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
             <br><br>
             <h3>Any schedule delays occur?</h3>
             <label for="delays">Yes</label>
