@@ -41,8 +41,13 @@
             padding-bottom: 9px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: left;
             height: auto;
+            text-align: left;
+        }
+        .container {
+            display: inline-block; /* Display container as an inline-block element */
+            text-align: left; /* Left align content within the container */
         }
 
         .inspection-form {
@@ -55,7 +60,7 @@
         }
 
         h2 {
-            color: #FF5733; /* Orange color */
+            color: #010038; /* Orange color */
             text-align: center;
         }
 
@@ -78,7 +83,7 @@
         .button {
             padding: 10px 20px;
             margin-top: 10px;
-            background-color: #FF5733; /* Orange color */
+            background-color: #00ff11; /* Orange color */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -88,14 +93,14 @@
 
         input[type="submit"]:hover,
         .button:hover {
-            background-color: #FF8C66; /* Lighter shade of orange on hover */
+            background-color: #51ff74; /* Lighter shade of orange on hover */
         }
 
         .button-container {
             text-align: center;
         }
         button {
-            background-color: #FF5733; /* Orange color */
+            background-color: #00065f; /* Orange color */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -105,29 +110,39 @@
         }
 
         button:hover {
-            background-color: #FF8C66; /* Lighter shade of orange on hover */
+            background-color: #03a900; /* Lighter shade of green on hover */
         }
     </style>
 </head>
-<body id="body">
-    <div class="container">
-        <h2 style="color: #ffffff; background-color: #FF5733; padding-top: 9px;">Construction Inspection and Survey Form</h2>
-        <!-- Beautiful div with text -->
-        <div style="background-color: #f0f0f0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 20px; margin-top: 20px;">
-            <h3 style="text-align: center; color: #FF5733;">CNA BUILDERS AND CONSULTANT CORPORATION</h3>
-        </div>
+<body >     
     <div class="container">
     <form id="inspectionForm">
+        <div class="container">
+            <div style="background-color: #00065f; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 9px; margin-top: 9px;">
+                <h2 style="color: #ffffff; background-color: #00065f; padding-top: 9px;">Construction Inspection and Survey Form</h2>
+                <br>
+                <h4 style="text-align: center; color: #04ff00;">Owner Inspector Choudhry M. Yusaf</h4>
+                <h2 style="text-align:center; color: #04ff00;">CNA BUILDERS AND CONSULTANT CORPORATION</h2>
+                <h3 style="text-align: center; color: #04ff00;">
+                    1 CARRIAGE ROAD, ROSLYN, NY 11576
+                    TEL. NO. (718) 781-4484</h3>
+            </div>
+        <div class="container">
+            <p id="dateTime" style="color: #00065f; font-weight: bold;"></p>
+        </div>
         <br>
-        <h1 style="color: #FF5733;">Survey</h1>
         <div class="item">
+           
+            <br>
+            <h1 style="color: #03a900;">Survey</h1>
+            <br>
             <h3>Any Accidents Today?</h3>
             <label for="accidents">Yes</label>
-            <input type="radio" id="accidents_yes" name="accidents" value="yes">
+            <input type="radio" id="accidents_yes" name="accidents" value="yes" oninput="toggleDescription('accidentsDescription', this)">
             <label for="accidents">No</label>
-            <input type="radio" id="accidents_no" name="accidents" value="no">
+            <input type="radio" id="accidents_no" name="accidents" value="no" oninput="toggleDescription('accidentsDescription', this)">
             <label for="accidents">N/A</label>
-            <input type="radio" id="accidents_na" name="accidents" value="NA">
+            <input type="radio" id="accidents_na" name="accidents" value="NA" oninput="toggleDescription('accidentsDescription', this)">
             <br>
             <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
             <br><br>
@@ -139,58 +154,58 @@
             <br><br>
             <h3>Any schedule delays occur?</h3>
             <label for="delays">Yes</label>
-            <input type="radio" id="delays_yes" name="delays" value="yes">
+            <input type="radio" id="delays_yes" name="delays" value="yes" oninput="toggleDescription('delaysDescription', this)">
             <label for="delays">No</label>
-            <input type="radio" id="delays_no" name="delays" value="no">
+            <input type="radio" id="delays_no" name="delays" value="no" oninput="toggleDescription('delaysDescription', this)">
             <label for="delays">N/A</label>
-            <input type="radio" id="delays_na" name="delays" value="NA">
+            <input type="radio" id="delays_na" name="delays" value="NA" oninput="toggleDescription('delaysDescription', this)">
             <br>
             <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
             <br><br>
-            <br><br>
             <h3>Did weather cause any delays?</h3>
             <label for="weatherDelays">Yes</label>
-            <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes">
+            <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes" oninput="toggleDescription('weatherDelaysDescription', this)">
             <label for="weatherDelays">No</label>
-            <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no">
+            <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no" oninput="toggleDescription('weatherDelaysDescription', this)">
             <label for="weatherDelays">N/A</label>
-            <input type="radio" id="weatherDelays_na" name="weatherDelays" value="no">
+            <input type="radio" id="weatherDelays_na" name="weatherDelays" value="NA" oninput="toggleDescription('weatherDelaysDescription', this)">
             <br>
             <textarea id="weatherDelaysDescription" name="weatherDelaysDescription" placeholder="Description"></textarea>
             <br><br>
             <h3>Any visitors on site?</h3>
             <label for="visitor">Yes</label>
-            <input type="radio" id="visitor_yes" name="visitor" value="yes">
+            <input type="radio" id="visitor_yes" name="visitor" value="yes" oninput="toggleDescription('visitorsDescription', this)">
             <label for="visitor">No</label>
-            <input type="radio" id="visitors_no" name="visitor" value="no">
+            <input type="radio" id="visitors_no" name="visitor" value="no" oninput="toggleDescription('visitorsDescription', this)">
             <label for="visitor">N/A</label>
-            <input type="radio" id="visitor_na" name="visitor" value="NA">
+            <input type="radio" id="visitor_na" name="visitor" value="NA" oninput="toggleDescription('visitorsDescription', this)">
             <br>
             <textarea id="visitorsDescription" name="visitorsDescription" placeholder="Description"></textarea>
             <br><br>
             <h3>Any area's that can't be worked on?</h3>
             <label for="area">Yes</label>
-            <input type="radio" id="area_yes" name="area" value="yes">
+            <input type="radio" id="area_yes" name="area" value="yes" oninput="toggleDescription('areaDescription', this)">
             <label for="area">No</label>
-            <input type="radio" id="area_no" name="area" value="no">
+            <input type="radio" id="area_no" name="area" value="no" oninput="toggleDescription('areaDescription', this)">
             <label for="area">N/A</label>
-            <input type="radio" id="area_na" name="area" value="NA">
+            <input type="radio" id="area_na" name="area" value="NA" oninput="toggleDescription('areaDescription', this)">
             <br>
             <textarea id="areaDescription" name="areaDescription" placeholder="Description"></textarea>
             <br><br>
             <h3>Any equipment rented on site?</h3>
             <label for="equipment">Yes</label>
-            <input type="radio" id="equipment_yes" name="equipment" value="yes">
+            <input type="radio" id="equipment_yes" name="equipment" value="yes" oninput="toggleDescription('equipmentDescription', this)">
             <label for="equipment">No</label>
-            <input type="radio" id="equipment_no" name="equipment" value="no">
+            <input type="radio" id="equipment_no" name="equipment" value="no" oninput="toggleDescription('equipmentDescription', this)">
             <label for="equipment">N/A</label>
-            <input type="radio" id="equipment_na" name="equipment" value="NA">
+            <input type="radio" id="equipment_na" name="equipment" value="NA" oninput="toggleDescription('equipmentDescription', this)">
             <br>
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br><br>
         </div>
-        <h1 style="color: #FF5733;">Exterior of Project</h1>
         <div class="item">
+            <h1 style="color: #03a900;">Exterior of Project</h1>
+            <br>
             <h3>1. Are all fences installed safely and supported properly?</h3>
             <label for="fences">Yes</label>
             <input type="radio" id="fences_yes" name="fences" value="yes">
@@ -244,8 +259,9 @@
             <br>
         <br>
         </div>
-        <h1 style="color: #FF5733;">Personal Protective Equipment</h1>
         <div class="item">
+            <h1 style="color: #03a900;">Personal Protective Equipment</h1>
+            <br>
             <h3>1. Are all workers wearing hardhats, safety glasses, vests, and work boots?</h3>
             <label for="wearing">Yes</label>
             <input type="radio" id="wearing_yes" name="wearing" value="yes">
@@ -283,8 +299,9 @@
             <br>
             <br>
         </div>
-        <h1 style="color: #FF5733;">Housekeeping</h1>
         <div class="item">
+            <h1 style="color: #03a900;">Housekeeping</h1>
+            <br>
             <h3>1. Are all areas of the project being kept clean and free of debris?</h3>
             <label for="cleanA">Yes</label>
             <input type="radio" id="cleanA_yes" name="cleanA" value="yes">
@@ -322,8 +339,9 @@
             <br>
             <br>
         </div>
-        <h1 style="color: #FF5733;">Equipment On Site</h1>
         <div class="item">
+            <h1 style="color: #03a900;">Equipment On Site</h1>
+            <br>
             <h3>1. All workers using equipment on site have been trained to use that specific equipment.</h3>
             <label for="trained">Yes</label>
             <input type="radio" id="trained_yes" name="trained" value="yes">
@@ -352,23 +370,58 @@
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br>
             <br>
-        </div>
-        <h3 style="color: #FF5733;">Prepared by:</h3>
+       <div id="DPB">
+        <h3 style="color: #00065f;">Prepared by:</h3>
         <input type="text" name="preparedBy" required>
         <br>
-        <h3 style="color: #FF5733;">Date:</h3>
+        <h3 style="color: #00065f;">Date:</h3>
         <input type="date" name="inspectionDate" required>
         <br>
         <br>
-        <!-- Buttons for Save as PDF, Send as PDF, Null Button -->
         <button type="button" onclick="saveAsPDF()">Save as PDF</button>
-    </form>
-        <br>
-        <br>
-        <div class="copyright_section">
-            <p class="copyright_text">Copyright 2024 All Right Reserved By -<a href="https://ninekiwi.com/"> NineKiwi.com</p>
-         </div>
+    <br>
+    <br>
+    <div class="copyright_section" style="background-color: #00065f;">
+        <p class="copyright_text">Copyright 2024 All Right Reserved By -<a href="https://ninekiwi.com/"> NineKiwi.com</p>
+     </div>
     </div>
+    </form>
+   
+    
+
+    <!-- Js Scrips -->
+    <script>
+        function toggleDescription(descriptionId, radio) {
+            var description = document.getElementById(descriptionId);
+            if (radio.value === "yes") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+                description.value = ""; // Clear the description if the radio button is N/A
+            }
+        }
+    </script>
+    
+    <script>
+        // Get the current date and time
+        var currentDateTime = new Date();
+    
+        // Format the date and time as desired
+        var formattedDateTime = currentDateTime.toLocaleString('en-US', { 
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
+        });
+    
+        // Set the content of the paragraph element with id "dateTime"
+        document.getElementById("dateTime").innerHTML = formattedDateTime;
+    </script>
+    
     <script>
         const fileInput = document.getElementById('tenantProtection');
         const imagePreviews = document.getElementById('imagePreviews');
@@ -390,7 +443,7 @@
             }
         });
     </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
     <script>
         // JavaScript functions for Save as PDF, Send as PDF, Null Button
@@ -399,26 +452,29 @@
   alert("Feature Coming Soon , soon->Form saved as PDF");
 }
         function saveAsPDF() {
-        const element = document.getElementById('body');
+        const element = document.getElementById('inspectionForm');
 
         // Get current date and time
         const now = new Date();
         const date = now.toISOString().slice(0,10); // Get date in YYYY-MM-DD format
         const time = now.toLocaleTimeString().replace(/:/g, ''); // Get time without colons
         const filename = `Construction_Inspection_and_Survey_Form_${date}_${time}.pdf`; // Construct filename
+        html2pdf()
+            .from(element)
+            .set({
+                margin: [9,9],
+                pagebreak: { after: '.item',avoid: '.DPB' }, 
+                image: { type: 'jpeg', quality: 0.99 }, // Use JPEG format for images with high quality
+                html2canvas: { scale: 2 }, // Scale up the content for better quality
+                jsPDF: { unit: 'px', format: 'a1', orientation: 'portrait' } 
+            })
+            .save(filename);
+    }
 
 function sendAsPDF() {
   // Add logic to send form as PDF
   alert("Feature Coming Soon ,soon->Form sent as PDF");
 }
-        html2pdf()
-            .from(element)
-            .set({
-                margin: [20, 10], // Left and right margin of 20px, Top and bottom margin of 10px
-                pagebreak: { mode: 'avoid-all', avoid: '.page-break' } // Recognize page break elements
-            })
-            .save(filename);
-    }
 
 function nullFunction() {
   // Placeholder for null button functionality
