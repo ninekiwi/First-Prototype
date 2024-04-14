@@ -109,7 +109,7 @@
         }
         button {
             background-color: #00065f; /* Orange color */
-            color: white;
+            color: rgb(255, 255, 255);
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -125,7 +125,10 @@
 <body >     
     <div class="container">
     <form id="inspectionForm">
+        
         <div class="container">
+            <div class="item">
+                <div class="item">
             <div style="background-color: #00065f; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 9px; margin-top: 9px;">
                 <h1 style="color: #ffffff; background-color: #00065f; padding-top: 9px;">Construction Inspection and Survey Form</h1>
                 <br>
@@ -141,270 +144,295 @@
         <br>
     <div class="container">
         <h1 style="color: #03a900;">Weather Info</h1>
-        <div id="weatherWidget">
-            <h2>Weather</h2>
-            <p>Loading...</p>
+        <div id="weatherWidget" class="weather-widget">
+            <h2>Weather Widget</h2>
+            <div id="weatherData"></div>
+            <div id="manualWeather">
+                <input type="text" id="cityInput" placeholder="Enter site city name">
+                <button onclick="fetchWeatherForCity()">Weather Information</button>
+            </div>
         </div>
+        
     </div>
 <br>
-        <div class="item">
+        
             <div >
-                <h3 style="color: #00065f;">Prepared by:</h3>
-                <input type="text" name="preparedBy" required>
-                <h3 style="color: #00065f;">Site Name & Location:</h3>
-                <input type="text" name="SiteAddress" required>
+                <h3 style="color: #00065f;">Prepared by: <input type="text" name="preparedBy" required></h3>
+                <h3 style="color: #00065f;">Site Name & Location:<input type="text" name="SiteAddress" required></h3>
+              <br>  
                 <br>
+                <h1 style="color: #00065f;"><b>General Notes</b></h1>
+
             <h3 style="color: #03a900;">Tenant Protection Inspection</h3>
             <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
             <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
             <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
             <br>
-           
+        </div>
+        </div>
+        <div class="item">
             <br>
-            <h1 style="color: #03a900;">Survey</h1>
+            <h1 style="color: #03a900;"><b>Survey</b></h1>
             <br>
-            <h3>Any Accidents Today? <label for="accidents">Yes</label>
+            <h3>1. Any Accidents Today?  &nbsp;    <label for="accidents">Yes</label>
                 <input type="radio" id="accidents_yes" name="accidents" value="yes" oninput="toggleDescription('accidentsDescription', this)">
                 <label for="accidents">No</label>
                 <input type="radio" id="accidents_no" name="accidents" value="no" oninput="toggleDescription('accidentsDescription', this)">
-                <label for="accidents">N/A</label>
+                <label for="accidents">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="accidents_na" name="accidents" value="NA" oninput="toggleDescription('accidentsDescription', this)"></h3>
             <textarea id="accidentsDescription" name="accidentsDescription" placeholder="Description"></textarea>
             <br>
-            <h3>Any schedule delays occur? <label for="delays">Yes</label>
+            <h3>2. Any schedule delays occur? &nbsp;<label for="delays">Yes</label>
                 <input type="radio" id="delays_yes" name="delays" value="yes" oninput="toggleDescription('delaysDescription', this)">
                 <label for="delays">No</label>
                 <input type="radio" id="delays_no" name="delays" value="no" oninput="toggleDescription('delaysDescription', this)">
-                <label for="delays">N/A</label>
+                <label for="delays">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="delays_na" name="delays" value="NA" oninput="toggleDescription('delaysDescription', this)"></h3>
             
             <textarea id="delaysDescription" name="delaysDescription" placeholder="Description"></textarea>
             <br>
-            <h3>Did weather cause any delays? <label for="weatherDelays">Yes</label>
+            <h3>3. Did weather cause any delays?&nbsp; <label for="weatherDelays">Yes</label>
                 <input type="radio" id="weatherDelays_yes" name="weatherDelays" value="yes" oninput="toggleDescription('weatherDelaysDescription', this)">
                 <label for="weatherDelays">No</label>
                 <input type="radio" id="weatherDelays_no" name="weatherDelays" value="no" oninput="toggleDescription('weatherDelaysDescription', this)">
-                <label for="weatherDelays">N/A</label>
+                <label for="weatherDelays">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="weatherDelays_na" name="weatherDelays" value="NA" oninput="toggleDescription('weatherDelaysDescription', this)"></h3>
             
             <textarea id="weatherDelaysDescription" name="weatherDelaysDescription" placeholder="Description"></textarea>
             <br>
-            <h3>Any visitors on site? <label for="visitor">Yes</label>
+            <h3>4. Any visitors on site? &nbsp;<label for="visitor">Yes</label>
                 <input type="radio" id="visitor_yes" name="visitor" value="yes" oninput="toggleDescription('visitorsDescription', this)">
                 <label for="visitor">No</label>
                 <input type="radio" id="visitors_no" name="visitor" value="no" oninput="toggleDescription('visitorsDescription', this)">
-                <label for="visitor">N/A</label>
+                <label for="visitor">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="visitor_na" name="visitor" value="NA" oninput="toggleDescription('visitorsDescription', this)"></h3>
             
             
             <textarea id="visitorsDescription" name="visitorsDescription" placeholder="Description"></textarea>
             <br>
-            <h3>Any area's that can't be worked on? <label for="area">Yes</label>
+            <h3>5. Any area's that can't be worked on? &nbsp;<label for="area">Yes</label>
                 <input type="radio" id="area_yes" name="area" value="yes" oninput="toggleDescription('areaDescription', this)">
                 <label for="area">No</label>
                 <input type="radio" id="area_no" name="area" value="no" oninput="toggleDescription('areaDescription', this)">
-                <label for="area">N/A</label>
+                <label for="area">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="area_na" name="area" value="NA" oninput="toggleDescription('areaDescription', this)">
                 </h3>
             
             <textarea id="areaDescription" name="areaDescription" placeholder="Description"></textarea>
             <br>
-            <h3>Any equipment rented on site? <label for="equipment">Yes</label>
+            <h3>6. Any equipment rented on site?&nbsp; <label for="equipment">Yes</label>
                 <input type="radio" id="equipment_yes" name="equipment" value="yes" oninput="toggleDescription('equipmentDescription', this)">
                 <label for="equipment">No</label>
                 <input type="radio" id="equipment_no" name="equipment" value="no" oninput="toggleDescription('equipmentDescription', this)">
-                <label for="equipment">N/A</label>
+                <label for="equipment">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="equipment_na" name="equipment" value="NA" oninput="toggleDescription('equipmentDescription', this)"></h3>
             
             
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br>
+            <br>
+        
         </div>
-
-        </div>
+        
+    
         <div class="item">
             <br>
-            <h1 style="color: #03a900;">Exterior of Project</h1>
+            <h1 style="color: #00065f;"><b>&nbsp;&nbsp;Project Safety Checklist</b></h1>
             <br>
-            <h3>1. Are all fences installed safely and supported properly? <label for="fences">Yes</label>
+            <h1 style="color: #03a900;">1 Exterior of Project</h1>
+            <br>
+            <h3>1.1 Are all fences installed safely and supported properly? &nbsp;<label for="fences">Yes</label>
                 <input type="radio" id="fences_yes" name="fences" value="yes">
                 <label for="fences">No</label>
                 <input type="radio" id="fences_no" name="fences" value="no">
-                <label for="fences">N/A</label>
+                <label for="fences">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="fences_na" name="fences" value="NA"></h3>
             <br>
             <br>
-            <h3>2. Is all project signage properly mounted and displayed for the public? <label for="signage">Yes</label>
+            <h3>1.2 Is all project signage properly mounted and displayed for the public? &nbsp;<label for="signage">Yes</label>
                 <input type="radio" id="signage_yes" name="signage" value="yes">
                 <label for="signage">No</label>
                 <input type="radio" id="signage_no" name="signage" value="no">
-                <label for="signage">N/A</label>
+                <label for="signage">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="signage_na" name="signage" value="NA"></h3>
             <br>
             <br>
-            <h3>3. Loading dock/material receiving area is clear of any vehicles or materials? <label for="rarea">Yes</label>
+            <h3>1.3 Loading dock/material receiving area is clear of any vehicles or materials?&nbsp; <label for="rarea">Yes</label>
                 <input type="radio" id="rarea_yes" name="rarea" value="yes">
                 <label for="rarea">No</label>
                 <input type="radio" id="rarea_no" name="rarea" value="no">
-                <label for="rarea">N/A</label>
+                <label for="rarea">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="rarea_na" name="rarea" value="NA"></h3>
             <br>
             <br>
-            <h3>4. All exterior equipment has proper flaggers, back-up signals, and is following speed limits. <label for="eequipment">Yes</label>
+            <h3>1.4 All exterior equipment has proper flaggers, back-up signals, and is following speed limits. &nbsp;<label for="eequipment">Yes</label>
                 <input type="radio" id="eequipment_yes" name="eequipment" value="yes">
                 <label for="eequipment">No</label>
                 <input type="radio" id="eequipment_no" name="eequipment" value="no">
-                <label for="eequipment">N/A</label>
+                <label for="eequipment">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="eequipment_na" name="eequipment" value="NA"></h3>
             <br>
             <br>
-            <h3>5. All trenching is being barricaded and workers are using shoring as required. <label for="trenching">Yes</label>
+            <h3>1.5 All trenching is being barricaded and workers are using shoring as required. &nbsp;<label for="trenching">Yes</label>
                 <input type="radio" id="trenching_yes" name="trenching" value="yes">
                 <label for="trenching">No</label>
                 <input type="radio" id="trenching_no" name="trenching" value="no">
-                <label for="trenching">N/A</label>
+                <label for="trenching">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="trenching_na" name="trenching" value="NA"></h3>
             <br>
             <br>
-            <h3>6. All crane activities are working safely to ensure protection of workers and the public. <label for="crane">Yes</label>
+            <h3>1.5 All crane activities are working safely to ensure protection of workers and the public. &nbsp;<label for="crane">Yes</label>
                 <input type="radio" id="crane_yes" name="crane" value="yes">
                 <label for="crane">No</label>
                 <input type="radio" id="crane_no" name="crane" value="no">
-                <label for="crane">N/A</label>
+                <label for="crane">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="crane_na" name="crane" value="NA"></h3>
             
             <br>
-            <h3>7. Please indicate any safety issues specific to exterior of the project noted during the inspection.</h3>
+            <h3>1.7 Please indicate any safety issues specific to exterior of the project noted during the inspection.&nbsp;</h3>
             <textarea id="eDescription" name="eDescription" placeholder="Description"></textarea>
             <br>
+        <br>
         <br>
         </div>
         <div class="item">
             <br>
-            <h1 style="color: #03a900;">Personal Protective Equipment</h1>
+            <h1 style="color: #03a900;">2. Personal Protective Equipment</h1>
             <br>
-            <h3>1. Are all workers wearing hardhats, safety glasses, vests, and work boots? <label for="wearing">Yes</label>
+            <h3>2.1 Are all workers wearing hardhats, safety glasses, vests, and work boots?&nbsp; <label for="wearing">Yes</label>
                 <input type="radio" id="wearing_yes" name="wearing" value="yes">
                 <label for="wearing">No</label>
                 <input type="radio" id="wearing_no" name="wearing" value="no">
-                <label for="wearing">N/A</label>
+                <label for="wearing">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="wearing_na" name="wearing" value="NA"></h3>
             <br>
             <br>
-            <h3>2. Any hazardous work occurring on site is utilizing all required PPE <label for="uPPE">Yes</label>
+            <h3>2.2 Any hazardous work occurring on site is utilizing all required PPE &nbsp;<label for="uPPE">Yes</label>
                 <input type="radio" id="uPPE_yes" name="uPPE" value="yes">
                 <label for="uPPE">No</label>
                 <input type="radio" id="uPPE_no" name="uPPE" value="no">
-                <label for="uPPE">N/A</label>
+                <label for="uPPE">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="uPPE_na" name="uPPE" value="NA"></h3>
             <br>                                                   
             <br>
-            <h3>3. All fall protection is being worn for work occurring above 6 feet. <label for="fprotection">Yes</label>
+            <h3>2.3 All fall protection is being worn for work occurring above 6 feet.&nbsp; <label for="fprotection">Yes</label>
                 <input type="radio" id="fprotection_yes" name="fprotection" value="yes">
                 <label for="fprotection">No</label>
                 <input type="radio" id="fprotection_no" name="fprotection" value="no">
-                <label for="fprotection">N/A</label>
+                <label for="fprotection">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="fprotection_na" name="fprotection" value="NA"></h3>
             <br>
             <br>
-            <h3>4. All visitors on site are wearing appropriate PPE. <label for="vPPE">Yes</label>
+            <h3>2.4 All visitors on site are wearing appropriate PPE. &nbsp;<label for="vPPE">Yes</label>
                 <input type="radio" id="vPPE_yes" name="vPPE" value="yes">
                 <label for="vPPE">No</label>
                 <input type="radio" id="vPPE_no" name="vPPE" value="no">
-                <label for="vPPE">N/A</label>
+                <label for="vPPE">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="vPPE_na" name="vPPE" value="NA"></h3>
             <br>
             <br>
-            <h3>5. Please indicate any safety issues specific to PPE noted during the inspection.</h3>
+            <h3>2.5 Please indicate any safety issues specific to PPE noted during the inspection.</h3>
             <textarea id="PPEDescription" name="PPEDescription" placeholder="Description"></textarea>
+            <br>
             <br>
             <br>
         </div>
         <div class="item">
             <br>
-            <h1 style="color: #03a900;">Housekeeping</h1>
+            <h1 style="color: #03a900;">3. Housekeeping</h1>
             <br>
-            <h3>1. Are all areas of the project being kept clean and free of debris?  <label for="cleanA">Yes</label>
+            <h3>3.1 Are all areas of the project being kept clean and free of debris?  &nbsp;<label for="cleanA">Yes</label>
                 <input type="radio" id="cleanA_yes" name="cleanA" value="yes">
                 <label for="cleanA">No</label>
                 <input type="radio" id="cleanA_no" name="cleanA" value="no">
-                <label for="cleanA">N/A</label>
+                <label for="cleanA">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="cleanA_na" name="cleanA" value="NA"></h3>
             <br>
             <br>
-            <h3>2. Are all corridors, stairs, and paths of egress free of debris? <label for="debrisF">Yes</label>
+            <h3>3.2 Are all corridors, stairs, and paths of egress free of debris? &nbsp;<label for="debrisF">Yes</label>
                 <input type="radio" id="debrisF_yes" name="debrisF" value="yes">
                 <label for="debrisF">No</label>
                 <input type="radio" id="debrisF_no" name="debrisF" value="no">
-                <label for="debrisF">N/A</label>
+                <label for="debrisF">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="debrisF_na" name="debrisF" value="NA"></h3>
             <br>
             <br>
-            <h3>3. Are any areas not up to housekeeping standards being addressed by the team? <label for="standards">Yes</label>
+            <h3>3.3 Are any areas not up to housekeeping standards being addressed by the team?&nbsp; <label for="standards">Yes</label>
                 <input type="radio" id="standards_yes" name="standards" value="yes">
                 <label for="standards">No</label>
                 <input type="radio" id="standards_no" name="standards" value="no">
-                <label for="standards">N/A</label>
+                <label for="standards">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="standards_na" name="standards" value="NA"></h3>
             <br>
             <br>
-            <h3>4. Project has adequate number of Fire Extinguishers and they are spaced as required. <label for="fExtinguishers">Yes</label>
+            <h3>3.4 Project has adequate number of Fire Extinguishers and they are spaced as required.&nbsp; <label for="fExtinguishers">Yes</label>
                 <input type="radio" id="fExtinguishers_yes" name="fExtinguishers" value="yes">
                 <label for="fExtinguishers">No</label>
                 <input type="radio" id="fExtinguishers_no" name="fExtinguishers" value="no">
-                <label for="fExtinguishers">N/A</label>
+                <label for="fExtinguishers">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="fExtinguishers_na" name="fExtinguishers" value="NA"></h3>
             <br>
             <br>
-            <h3>5. Please indicate any safety issues specific to housekeeping noted during the inspection.</h3>
+            <h3>3.5 Please indicate any safety issues specific to housekeeping noted during the inspection.</h3>
             <textarea id="housekeepingDescription" name="housekeepingDescription" placeholder="Description"></textarea>
             <br>
             <br>
         </div>
         <div class="item">
             <br>
-            <h1 style="color: #03a900;">Equipment On Site</h1>
+            <h1 style="color: #03a900;">4. Equipment On Site</h1>
             <br>
-            <h3>1. All workers using equipment on site have been trained to use that specific equipment. <label for="trained">Yes</label>
+            <h3>4.1 All workers using equipment on site have been trained to use that specific equipment. &nbsp;<label for="trained">Yes</label>
                 <input type="radio" id="trained_yes" name="trained" value="yes">
                 <label for="trained">No</label>
                 <input type="radio" id="trained_no" name="trained" value="no">
-                <label for="trained">N/A</label>
+                <label for="trained">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="trained_na" name="trained" value="NA"></h3>
             <br>
             <br>
-            <h3>2. All workers using equipment on site are following manufacturer's and OSHA's requirements for safe use. <label for="OSHA">Yes</label>
+            <h3>4.2 All workers using equipment on site are following manufacturer's and OSHA's requirements for safe use.&nbsp; <label for="OSHA">Yes</label>
                 <input type="radio" id="OSHA_yes" name="OSHA" value="yes">
                 <label for="OSHA">No</label>
                 <input type="radio" id="OSHA_no" name="OSHA" value="no">
-                <label for="OSHA">N/A</label>
+                <label for="OSHA">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="OSHA_na" name="OSHA" value="NA"></h3>
             <br>
             <br>
-            <h3>3. All cords, plugs, and spider boxes are in good working condition <label for="gcondition">Yes</label>
+            <h3>4.3 All cords, plugs, and spider boxes are in good working condition &nbsp;<label for="gcondition">Yes</label>
                 <input type="radio" id="gcondition_yes" name="gcondition" value="yes">
                 <label for="gcondition">No</label>
                 <input type="radio" id="gcondition_no" name="gcondition" value="no">
-                <label for="gcondition">N/A</label>
+                <label for="gcondition">&nbsp;&nbsp;N/A</label>
                 <input type="radio" id="gcondition_na" name="gcondition" value="NA"></h3>
             <br>
             <br>
-            <h3>4. Please indicate any safety issues specific to equipment noted during the inspection</h3>
+            <h3>4.4 Please indicate any safety issues specific to equipment noted during the inspection&nbsp;</h3>
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br>
+            <p id="reviewText"><input type="text" id="nameInput" placeholder="Enter your name">
+                <button id="submitButton">Submit</button></p>
             <br>
       
         <br>
-        <button type="button" onclick="saveAsPDF()">Save as PDF</button>
+                
+        <h3 style="color: #00065f;">Job Number: <label for="jobNumber">N/A</label><input type="radio" id="jobNumber_na" name="jobNumber" value="NA" oninput="toggleDescription('jobNumberid', this)"><input type="text" name="jobNumber" id="jobNumberid"></h3>
+
+    </div>
     <br>
     <br>
+    </form>
+    </div>
+    
+   <br><br>
+   <div class="DPB">
+    <br><br>
+    <button onclick="saveAsPDF()">Save as PDF</button>
+    <!-- <button onclick="sendAsPDF()">Send as PDF via Email</button> -->
+    <br><br>
     <div class="copyright_section" style="background-color: #00065f;">
         <p class="copyright_text">Copyright 2024 All Right Reserved By -<a href="https://ninekiwi.com/"> NineKiwi.com</p>
      </div>
     </div>
-    </form>
-   
-    
 
     <!-- Js Scrips -->
     <script>
@@ -463,65 +491,80 @@
     </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                fetchWeather(position.coords.latitude, position.coords.longitude);
-            });
-        } else {
-            showError("Geolocation is not supported by this browser.");
-        }
-    });
-
-    function fetchWeather(latitude, longitude) {
-        const apiKey = '376094c3e6045254d196c1dabbe689c5';
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
-        const reverseGeocodeUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${apiKey}`;
-
-        // Fetch weather data
-        fetch(weatherUrl)
-            .then(response => response.json())
-            .then(weatherData => {
-                // Fetch city name
-                fetch(reverseGeocodeUrl)
-                    .then(response => response.json())
-                    .then(locationData => {
-                        const city = locationData[0].name;
-                        updateWeather(city, weatherData);
-                    })
-                    .catch(error => {
-                        console.error("Error fetching location data:", error);
-                        showError("Failed to fetch location data.");
-                    });
-            })
-            .catch(error => {
-                console.error("Error fetching weather data:", error);
-                showError("Failed to fetch weather data.");
-            });
+    function fetchWeatherForCity() {
+    const cityName = document.getElementById("cityInput").value.trim();
+    if (cityName === "") {
+        showError("Please enter a city name.");
+        return;
     }
+    const apiKey = '376094c3e6045254d196c1dabbe689c5';
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
 
-    function updateWeather(city, weatherData) {
-        const temperature = weatherData.main.temp;
-        const windSpeed = weatherData.wind.speed;
-        const humidity = weatherData.main.humidity;
-        const weatherDescription = weatherData.weather[0].description;
+    // Fetch weather data for the city
+    fetch(weatherUrl)
+        .then(response => response.json())
+        .then(weatherData => {
+            if (weatherData.cod !== 200) {
+                showError(`City not found: ${weatherData.message}`);
+                return;
+            }
+            const city = weatherData.name;
+            updateWeather(city, weatherData);
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+            showError("Failed to fetch weather data.");
+        });
+}
 
-        const widgetElement = document.getElementById("weatherWidget");
-        widgetElement.innerHTML = `
-            <h2>${city}</h2>
-            <p>Temperature: ${temperature}°F</p>
-            <p>Wind Speed: ${windSpeed} mph</p>
-            <p>Humidity: ${humidity}%</p>
-            <p>Weather: ${weatherDescription}</p>
-        `;
-    }
+function updateWeather(city, weatherData) {
+    const temperature = weatherData.main.temp;
+    const windSpeed = weatherData.wind.speed;
+    const humidity = weatherData.main.humidity;
+    const weatherDescription = weatherData.weather[0].description;
 
-    function showError(message) {
-        const widgetElement = document.getElementById("weatherWidget");
-        widgetElement.innerHTML = `<p>${message}</p>`;
-    }
+    const weatherElement = document.getElementById("weatherData");
+    weatherElement.innerHTML = `
+        <p>Temperature: ${temperature}°F</p>
+        <p>Wind Speed: ${windSpeed} mph</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Weather: ${weatherDescription}</p>
+    `;
+}
+
+function showError(message) {
+    const weatherElement = document.getElementById("weatherData");
+    weatherElement.innerHTML = `<p>${message}</p>`;
+}
+
 </script>
-<script>        
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: 'kq673XCqjNRB1-8I-',
+      });
+   })();
+</script>
+<script>     
+// Function to update the review message based on the entered name
+document.getElementById("submitButton").addEventListener("click", updateReviewMessage);
+
+function updateReviewMessage() {
+    const name = document.getElementById("nameInput").value.trim();
+    const reviewText = document.getElementById("reviewText");
+    if (name !== "") {
+        reviewText.textContent = `I, ${name}, have reviewed and completed this report.`;
+    } else {
+        reviewText.textContent = ""; // Clear the message if the name is empty
+    }
+}
+
+
+
 function saveAsPDF() {
         const element = document.getElementById('inspectionForm');
         // Get current date and time
@@ -533,7 +576,7 @@ function saveAsPDF() {
             .from(element)
             .set({
                 margin: [9,9],
-                pagebreak: { after: '.item' }, 
+                pagebreak: { after: '.item', avoid: '.DPB'}, 
                 image: { type: 'jpeg', quality: 0.99 }, // Use JPEG format for images with high quality
                 html2canvas: { scale: 2 }, // Scale up the content for better quality
                 jsPDF: { unit: 'px', format: 'a1', orientation: 'portrait' } 
@@ -541,23 +584,63 @@ function saveAsPDF() {
             .save(filename);
     }
 
-function sendAsPDF() {
-  // Add logic to send form as PDF
-  alert("Feature Coming Soon ,soon->Form sent as PDF");
+    function sendAsPDF() {
+    // Get recipient's email from the input field
+    const to_email = document.getElementById('recipientEmail').value;
+
+    // Generate the PDF and send email
+    const element = document.getElementById('inspectionForm');
+    html2pdf()
+        .from(element)
+        .set({
+                margin: [2,2],
+                pagebreak: { after: '.item', avoid: '.DPB'}, 
+                image: { type: 'jpeg', quality: 0.99 }, // Use JPEG format for images with high quality
+                html2canvas: { scale: 2 }, // Scale up the content for better quality
+                jsPDF: { unit: 'px', format: 'a1', orientation: 'portrait' } 
+            })
+        .toPdf()
+        .get('pdf')
+        .then(pdf => {
+            // Convert PDF to base64
+            const pdfBase64 = btoa(pdf.output('blob'));
+
+            // Set up the form data
+            const formData = new FormData();
+            formData.append('to_email', to_email);
+            formData.append('from_name', 'NineKiwi'); // Change this to the sender's name
+            formData.append('message', 'Here is the Construction Inspection Form as PDF.');
+            formData.append('subject', 'Construction Inspection Form');
+            formData.append('attachments', new File([pdfBase64], 'construction_inspection_form.pdf'));
+
+            // Send email using EmailJS sendForm method
+            emailjs.sendForm('service_6is0l14', 'template_2jpw0ve', '#inspectionForm').then(
+                (response) => {
+                    console.log('Email sent successfully!', response);
+                    alert('Email sent successfully!');
+                },
+                (error) => {
+                    console.error('Error sending email:', error);
+                    alert('Failed to send email. Please try again later.');
+                }
+            );
+        });
 }
+
 
 function nullFunction() {
   // Placeholder for null button functionality
   alert("Feature Coming Soon");
 }
-        function sendAsPDF() {
-            alert("Feature Coming Soon");
-        }
-
-        function nullFunction() {
-            alert("Feature Coming Soon");
-        }
-    </script>
+</script>
 
 </body>
 </html>
+<!-- 
+    tenantProtection
+    pg no.
+    weather manual
+    Prepared By
+    JobNumber
+    
+ -->
