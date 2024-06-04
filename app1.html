@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images//favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images//favicon-16x16.png">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <title>NineKiwi.com Login</title>
     <style>
         body {
@@ -24,7 +55,7 @@
         }
 
         h2 {
-            color: #FF5733; /* Orange color */
+            color: #2b00ff; /* blue color */
             text-align: center;
         }
 
@@ -46,7 +77,7 @@
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            background-color: #FF5733; /* Orange color */
+            background-color: #1500ff94; /* blue color */
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -60,7 +91,7 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="container-fluid">
         <h2>Login</h2>
         <form id="loginForm" onsubmit="return handleLogin()">
             <label for="userId">User ID:</label>
@@ -68,6 +99,10 @@
             <br><br>
             <input type="submit" value="Login">
         </form>
+    
+    <br>
+    <div class="copyright_section">
+        <p class="copyright_text">Copyright 2024 All Right Reserved By &copy <a href="https://ninekiwi.com/"> NineKiwi.com</p>
     </div>
 
     <script>

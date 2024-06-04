@@ -142,8 +142,7 @@
         }
     </style>
 </head>
-<body >    
-     
+<body id="Form1">    
     <div class="container">
     <form id="inspectionForm">
         
@@ -533,20 +532,15 @@
         <h3 style="color: #00065f;">Job Number: <label for="jobNumber">N/A</label><input type="radio" id="jobNumber_na" name="jobNumber" value="NA" oninput="toggleDescription('jobNumberid', this)"><input type="text" name="jobNumber" id="jobNumberid"></h3>
 
     </div>
-    <br>
-    <br>
     </form>
     </div>
-    
-   <br><br>
    <div class="DPB">
-    <br><br>
     <button onclick="saveAsPDF()">Save as PDF</button>
     <!-- <button onclick="sendAsPDF()">Send as PDF via Email</button> -->
     <br><br>
     <div class="copyright_section" style="background-color: #00065f;">
-        <p class="copyright_text">Copyright 2024 All Right Reserved By -<a href="https://ninekiwi.com/"> NineKiwi.com</p>
-     </div>
+        <p class="copyright_text">Copyright 2024 All Right Reserved By &copy <a href="https://ninekiwi.com/"> NineKiwi.com</p>
+        </div>
     </div>
 
     <!-- Js Scrips -->
@@ -677,7 +671,6 @@ function updateReviewMessage() {
         reviewText.textContent = ""; // Clear the message if the name is empty
     }
 }
-
 
 
 function saveAsPDF() {
