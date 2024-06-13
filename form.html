@@ -144,8 +144,7 @@
 </head>
 <body id="Form1">    
     <div class="container">
-    <form id="inspectionForm">
-        
+        <form name="inspection-form" id="inspectionForm" action="https://script.google.com/macros/s/AKfycbwMhJp4KBsu8amW-kEqgj_TAZBaxFSX60tyL_JKWR5nor5OlPO5DKbg79xCoCvJsq6aVg/exec" method="post">
         <div class="container">
             <div class="item">
                 <div class="item">
@@ -159,7 +158,7 @@
                     TEL. NO. (718) 781-4484</h5>
             </div>
         <div class="container">
-            <p id="dateTime" style="color: #00065f; font-weight: bold;"></p>
+            <p id="dateTime" name="Date-Time" style="color: #00065f; font-weight: bold;"></p>
         </div>
         <br>
     <div class="container">
@@ -168,7 +167,7 @@
             <h2>Weather Widget</h2>
             <div id="weatherData"></div>
             <div id="manualWeather">
-                <input type="text" id="cityInput" placeholder="Enter site city name">
+                <input type="text" name="Weater-City" id="cityInput" placeholder="Enter site city name">
                 <button onclick="fetchWeatherForCity()">Weather Information</button>
             </div>
         </div>
@@ -184,7 +183,7 @@
                 <h1 style="color: #00065f;"><b>General Notes</b></h1>
 
             <h3 style="color: #03a900;">Tenant Protection Inspection</h3>
-            <input type="file" id="tenantProtection" name="tenantProtection" accept="image/*" multiple>
+            <input type="file" id="tenantProtection" name="tenantProtection-images" accept="image/*" multiple>
             <div id="imagePreviews" style="display: flex; flex-wrap: wrap;"></div>            
             <textarea id="tenantProtection" name="tenantProtection" placeholder="Description"></textarea>
             <br>
@@ -195,7 +194,7 @@
             <h1 style="color: #03a900;"><b>Survey</b></h1>
             <br>
             <div class="flex-container">
-                <h3 class="question">1. Any Accidents Today?</h3>
+                <h3 class="question" name="Any Accidents Today?">1. Any Accidents Today?</h3>
                 <div class="options">
                    <h4> <label for="accidents_yes">Yes</label>
                     <input type="radio" id="accidents_yes" name="accidents" value="yes" oninput="toggleDescription('accidentsDescription', this)">
@@ -357,7 +356,7 @@
             
             <br>
             <h3 class="question">1.7 Please indicate any safety issues specific to exterior of the project noted during the inspection.&nbsp;</h3>
-            <textarea id="eDescription" name="eDescription" placeholder="Description"></textarea>
+            <textarea id="eDescription" name="exteriorProjDescription" placeholder="Description"></textarea>
             <br>
         <br>
         <br>
@@ -523,7 +522,7 @@
             <textarea id="equipmentDescription" name="equipmentDescription" placeholder="Description"></textarea>
             <br>
             <br>
-            <p id="reviewText"><input type="text" id="nameInput" placeholder="Enter your name">
+            <p id="reviewText"><input type="text" name="Name" nameid="nameInput" placeholder="Enter your name">
                 <button id="submitButton">Submit</button></p>
             <br>
       
@@ -532,10 +531,10 @@
         <h3 style="color: #00065f;">Job Number: <label for="jobNumber">N/A</label><input type="radio" id="jobNumber_na" name="jobNumber" value="NA" oninput="toggleDescription('jobNumberid', this)"><input type="text" name="jobNumber" id="jobNumberid"></h3>
 
     </div>
+    <br>
+    <button type="submit" id="submitButton">Submit Form</button>
     </form>
-    <div class="button-container">
-        <button type="button" onclick="generateReport()">Generate Report</button>
-    </div>
+    
     </div>
    <div class="DPB">
     <button onclick="saveAsPDF()">Save as PDF</button>
